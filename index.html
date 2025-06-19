@@ -1,0 +1,224 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--~~~~~~~~~~~~~~~ Favicon ~~~~~~~~~~~~~~~-->
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon">
+
+    <!--~~~~~~~~~~~~~~~ Remix Icon ~~~~~~~~~~~~~~~-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" />
+
+    <!--~~~~~~~~~~~~~~~ Swiper's CSS ~~~~~~~~~~~~~~~-->
+    <link rel="stylesheet" href="./output.css">
+
+    <title>RealEstate Website</title>
+</head>
+
+<body>
+    <!--~~~~~~~~~~~~~~~ HEADER ~~~~~~~~~~~~~~~-->
+    <header id="navbar" class="bg-secondcolor fixed w-full top-0 left-0 z-50 shadow-md">
+        <nav class="max-w-[1920px] mx-auto md:px-10 px-5 flex items-center h-20">
+            <img src="/assets/images/logo.png" alt="logo" class="w-28 mr-10 sm:mr-32">
+            <!-- Mobile menu  -->
+            <div id="nav-menu"
+                class="xl:hidden bg-whitecolor absolute top-20 left-[-100%] h-screen w-3/4 duration-300 lg:w-1/2">
+                <div class="flex flex-col gap-1">
+                    <a href="#home" class="nav-link active">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#company" class="nav-link">Company</a>
+                    <a href="#review" class="nav-link">Review</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                    <a href="#tel:+91123456789" class="phone-number"><i class="ri-phone-line"></i>+91 1234567890</a>
+                </div>
+            </div>
+            <div class="text-whitecolor text-xl sm:text-3xl cursor-pointer z-50">
+                <i class="ri-menu-4-line" id="hamburger"></i>
+            </div>
+
+            <!-- Desktop menu  -->
+            <div id="nav-menu-2"
+                class="hidden xl:block bg-whitecolor absolute top-[-100%] left-[30%] h-20 w-max duration-300">
+                <div class="flex items-center justify-center h-full">
+                    <a href="#home" class="nav-link active">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#company" class="nav-link">Company</a>
+                    <a href="#review" class="nav-link">Review</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                    <a href="#tel:+91123456789" class="phone-number"><i class="ri-phone-line"></i>+91 1234567890</a>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <main class="max-w-[1920px] mx-auto">
+        <!--~~~~~~~~~~~~~~~ HOME ~~~~~~~~~~~~~~~-->
+        <div id="home" class="text-whitecolor pt-20 xl:h-screen">
+            <div class="flex flex-col lg:flex-row xl:h-full">
+                <div class="relative flex flex-col justify-between overflow-hidden lg:w-[30%]">
+                    <div
+                        class="h-[calc(100%-100px)] flex flex-col gap-8 items-center justify-center py-12 xl:py-28 xl:gap-16 xl:max-w-xs xl:mx-auto">
+                        <h1>
+                            Designing <br>
+                            & building
+                        </h1>
+                        <h4 class="xl:self-end">
+                            Energy-efficient <br>
+                            modern residences <br>
+                            from 130 sq. m.
+                        </h4>
+                        <button class="btn btn__outline xl:self-start">
+                            Contact us
+                        </button>
+
+                    </div>
+
+                    <div class="flex items-center justify-center gap-3 bg-secondcolorlight w-full h-[100px]">
+                        <div id="prev"
+                            class="text-lg h-12 w-12 border-2 border-graycolor rounded-full grid place-items-center curosr-pointer hover:text-graycolor duration-300">
+                            <i class="ri-arrow-left-line"></i>
+                        </div>
+
+                        <div id="next"
+                            class="text-lg h-12 w-12 border-2 border-graycolor rounded-full grid place-items-center curosr-pointer hover:text-graycolor duration-300">
+                            <i class="ri-arrow-right-line"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- carousel image  -->
+                <div class="lg:w-[70%]">
+                    <div class="carousel h-full">
+                        <div class="carousel__inner h-full">
+                            <div class="relative flex h-full">
+                                <!-- item 1 -->
+                                <div class="carousel__item carousel__item__active h-full w-full">
+                                    <img src="/assets/images/slide-1.jpg" alt="carousel_image"
+                                        class="carousel__img h-[calc(100%-100px)] w-full">
+                                    <div
+                                        class="h-[100px] flex flex-col gap-2 items-center justify-center px-5 lg:flex-row lg:justify-between">
+                                        <div
+                                            class="hidden lg:block text-graycolor lg:text-2xl xl:text-5xl font-bold uppercase">
+                                            63+ works</div>
+                                        <div class="flex flex-wrap gap-x-2 lg:gap-x-5 justify-center items-center">
+                                            <h4 class="text-whitecolor">Hewes Ave</h4>
+                                            <h4>290 sq. m.</h4>
+                                            <h4>$ 390 000</h4>
+                                            <h4 class="hidden xl:block border-b w-32 border-graycolor"></h4>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- item 2 -->
+                                <div class="carousel__item h-full w-full">
+                                    <img src="/assets/images/slide-2.jpg" alt="carousel_image"
+                                        class="carousel__img h-[calc(100%-100px)] w-full">
+                                    <div
+                                        class="h-[100px] flex flex-col gap-2 items-center justify-center px-5 lg:flex-row lg:justify-between">
+                                        <div
+                                            class="hidden lg:block text-graycolor lg:text-2xl xl:text-5xl font-bold uppercase">
+                                            63+ works</div>
+                                        <div class="flex flex-wrap gap-x-2 lg:gap-x-5 justify-center items-center">
+                                            <h4 class="text-whitecolor">Barton St</h4>
+                                            <h4>350 sq. m.</h4>
+                                            <h4>$ 420 000</h4>
+                                            <h4 class="hidden xl:block border-b w-32 border-graycolor"></h4>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- item 3 -->
+                                <div class="carousel__item h-full w-full">
+                                    <img src="/assets/images/slide-3.jpg" alt="carousel_image"
+                                        class="carousel__img h-[calc(100%-100px)] w-full">
+                                    <div
+                                        class="h-[100px] flex flex-col gap-2 items-center justify-center px-5 lg:flex-row lg:justify-between">
+                                        <div
+                                            class="hidden lg:block text-graycolor lg:text-2xl xl:text-5xl font-bold uppercase">
+                                            63+ works</div>
+                                        <div class="flex flex-wrap gap-x-2 lg:gap-x-5 justify-center items-center">
+                                            <h4 class="text-whitecolor">Eldon Dr</h4>
+                                            <h4>250 sq. m.</h4>
+                                            <h4>$ 370 000</h4>
+                                            <h4 class="hidden xl:block border-b w-32 border-graycolor"></h4>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- item 4 -->
+                                <div class="carousel__item h-full w-full">
+                                    <img src="/assets/images/slide-4.jpg" alt="carousel_image"
+                                        class="carousel__img h-[calc(100%-100px)] w-full">
+                                    <div
+                                        class="h-[100px] flex flex-col gap-2 items-center justify-center px-5 lg:flex-row lg:justify-between">
+                                        <div
+                                            class="hidden lg:block text-graycolor lg:text-2xl xl:text-5xl font-bold uppercase">
+                                            63+ works</div>
+                                        <div class="flex flex-wrap gap-x-2 lg:gap-x-5 justify-center items-center">
+                                            <h4 class="text-whitecolor">Carlisle Rd </h4>
+                                            <h4>350 sq. m.</h4>
+                                            <h4>$ 480 000</h4>
+                                            <h4 class="hidden xl:block border-b w-32 border-graycolor"></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!--~~~~~~~~~~~~~~~ ABOUT US ~~~~~~~~~~~~~~~-->
+        <section id="about">
+
+        </section>
+
+        <!--~~~~~~~~~~~~~~~ PROCESS ~~~~~~~~~~~~~~~-->
+        <section id="process">
+
+        </section>
+
+        <!--~~~~~~~~~~~~~~~ COMPANY ~~~~~~~~~~~~~~~-->
+        <section id="company">
+
+        </section>
+
+        <!--~~~~~~~~~~~~~~~ BLOG ~~~~~~~~~~~~~~~-->
+        <section id="blog">
+
+        </section>
+
+        <!--~~~~~~~~~~~~~~~ REVIEW ~~~~~~~~~~~~~~~-->
+        <section id="review">
+
+        </section>
+
+        <!--~~~~~~~~~~~~~~~ CONTACT ~~~~~~~~~~~~~~~-->
+        <section id="contact">
+
+        </section>
+    </main>
+
+    <!--~~~~~~~~~~~~~~~ FOOTER ~~~~~~~~~~~~~~~-->
+    <footer>
+
+    </footer>
+
+
+    <!--~~~~~~~~~~~~~~~ SCROLL UP ~~~~~~~~~~~~~~~-->
+
+    <!--~~~~~~~~~~~~~~~ SWIPER JS ~~~~~~~~~~~~~~~-->
+
+    <!--~~~~~~~~~~ SCROLLREVEAL ~~~~~~~~~~-->
+
+    <!--~~~~~~~~~~ MAINJS ~~~~~~~~~~-->
+    <script src="main.js"></script>
+</body>
+
+</html>

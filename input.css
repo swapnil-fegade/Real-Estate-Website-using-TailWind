@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* Font Families */
+  --font-montserrat: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+
+  /* Custom Colors */
+  --color-firstcolor: #A02334;
+  --color-secondcolor: #000000;
+  --color-secondcolorlight: #0c0c0c;
+  --color-whitecolor: #FFFFFF;
+  --color-blackcolor: #000000;
+  --color-graycolor: #C4C4C450;
+  --color-paragraphcolor: #000000B3;
+
+  /* Responsive Breakpoints */
+  --breakpoint-sm: 340px;
+  --breakpoint-md: 540px;
+  --breakpoint-lg: 768px;
+  --breakpoint-xl: 1180px;
+}
+
+body {
+    @apply bg-secondcolor font-montserrat tracking-wider;
+}
+
+h1 {
+    @apply text-whitecolor text-3xl xl:text-5xl font-bold uppercase;
+}
+
+h2 {
+    @apply text-xl md:text-3xl font-bold uppercase;
+}
+
+h3 {
+    @apply text-xl md:text-2xl font-bold uppercase;
+}
+
+h4 {
+    @apply text-base text-firstcolor font-bold uppercase;
+}
+
+p {
+    @apply text-paragraphcolor; 
+}
+
+
+/* header */
+#nav-menu .nav-link, 
+#nav-menu .phone-number,
+#nav-menu-2 .nav-link, 
+#nav-menu-2 .phone-number {
+    @apply text-lg px-5 py-3 duration-300;
+}
+
+.phone-number:hover {
+    @apply text-firstcolor;
+}
+
+/* active  */
+#nav-menu .nav-link:hover,
+#nav-menu .active 
+{
+    @apply bg-firstcolor text-whitecolor;
+}
+
+#nav-menu-2 .nav-link:hover,
+#nav-menu-2 .active {
+    @apply text-firstcolor;
+}
+
+.btn {
+    @apply border border-firstcolor bg-firstcolor text-whitecolor px-5 py-2 rounded-lg font-bold uppercase duration-300;
+}
+
+.btn:hover {
+    @apply opacity-90;
+}
+
+.btn__outline {
+    @apply bg-transparent;
+}
+
+.btn__outline:hover {
+    @apply bg-firstcolor;
+}
+
+/* carousel 1 */
+
+.carousel {
+    @apply relative;
+}
+
+.carousel__inner {
+    @apply w-full after:content-[""] after:block clear-both;
+}
+
+.carousel__item {
+    @apply relative float-left hidden w-full mr-[-100%];
+}
+
+/* slide effect */
+
+
+.carousel__item__active,
+.carousel__item__pos__next {
+    @apply block;
+}
+
+.carousel__item__pos__next {
+    @apply left-full;
+}
+
+.carousel__item__next {
+    @apply -translate-x-full duration-500 ease-in-out;
+}
+
+.carousel__img {
+    @apply block w-full;
+}
