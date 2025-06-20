@@ -134,6 +134,20 @@ function getItemActiveIndex() {
 
 /*~~~~~~~~~~~~~~~ Effect MOUSEMOVE EFFECT ~~~~~~~~~~~~~~~*/
 
+function handleMouseMove(e, image) {
+    const x = e.clientX / window.innerWidth;
+    const y = e.clientY / window.innerHeight;
+
+    const moveX = (x - 0.5) * 50;
+    const moveY = (y - 0.5) * 50; // Adjust the multiplier for sensitivity
+
+    image.style.transform = `translate(${moveX}px, ${moveY}px)`;
+}
+document.querySelector("#about").addEventListener("mousemove", (e) => {
+    const image = document.querySelector(".background-image-about");
+    handleMouseMove(e, image);
+});
+
 
 /*~~~~~~~~~~~~~~~ TABS ~~~~~~~~~~~~~~~*/
 
