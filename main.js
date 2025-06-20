@@ -20,6 +20,116 @@ navLink.forEach(link => {
 
 
 /*~~~~~~~~~~~~~~~ Caurosel CAUROSEL ~~~~~~~~~~~~~~~*/
+let onSlide = false;
+
+window.addEventListener("load", () => {
+    autoslide();
+
+    const buttonPrev = document.querySelector(".carousel__button__prev");
+    const buttonNext = document.querySelector(".carousel__button__next");
+
+    buttonNext.addEventListener("click", () => slide(getItemActiveIndex() + 1));
+
+    buttonPrev.addEventListener("click", () => slide(getItemActiveIndex() - 1));
+})
+
+function autoslide(){
+    setInterval(() => {
+        slide(getItemActiveIndex() + 1);
+    }, 5000)   // slide speed = 5s
+}
+
+// function slide(toIndex){
+
+    // if(onSlide) return; // Prevent multiple clicks during transition
+    // onSlide = true;
+    // const itemsArray = Array.from(document.querySelectorAll('.carousel__item'));
+    // const itemActive = document.querySelector(".carousel__item__active");
+    // const itemActiveIndex = itemsArray.indexOf(itemActive);
+    // let newItemActive = null;
+
+    // if(toIndex > itemActiveIndex) {
+    //         if(toIndex >= itemsArray.length) {
+    //             toIndex = 0;
+    //         }
+
+    //         newItemActive = itemsArray[toIndex];
+    //         newItemActive.classList.add("carousel__item__pos__next");
+    //         setTimeout(() => {
+    //             newItemActive.classList.add("carousel__item__next");
+    //             itemActive.classList.add("carousel__item__next");
+    //         }, 20);
+    // } else {
+    //     if(toIndex < 0) {
+    //         toIndex = itemsArray.length - 1;
+    //     }
+
+    //     newItemActive = itemsArray[toIndex];
+    //     newItemActive.classList.add("carousel__item__pos__prev");
+    //     setTimeout(() => {
+    //         newItemActive.classList.add("carousel__item__prev");
+    //         itemActive.classList.add("carousel__item__prev");
+    //     }, 20);
+    // }
+
+    // newItemActive.addEventListener("transitionend", () => {
+    //     itemActive.className = "carousel__item";
+    //     newItemActive.className = "carousel__item carousel__item__active";
+    //     onSlide = false;
+    // }, { once: true });
+
+// }
+function slide(toIndex) {
+    if (onSlide) return;
+    onSlide = true;
+    const itemsArray = Array.from(document.querySelectorAll('.carousel__item'));
+    const itemActive = document.querySelector(".carousel__item__active");
+    const itemActiveIndex = itemsArray.indexOf(itemActive);
+
+    // Wrap around
+    if (toIndex >= itemsArray.length) toIndex = 0;
+    if (toIndex < 0) toIndex = itemsArray.length - 1;
+
+    if (toIndex === itemActiveIndex) {
+        onSlide = false;
+        return;
+    }
+
+    const newItemActive = itemsArray[toIndex];
+
+    // Remove animation class from outgoing slide h4s
+    itemActive.querySelectorAll('h4').forEach(h4 => {
+        h4.classList.remove('carousel__h4-animate');
+    });
+
+    // Prepare new slide for fade
+    newItemActive.classList.add("carousel__item__pos__next", "carousel__item__active");
+
+    setTimeout(() => {
+        newItemActive.classList.add("carousel__item__next");
+        itemActive.classList.add("carousel__item__next");
+    }, 20);
+
+    function cleanUp() {
+        itemActive.className = "carousel__item";
+        newItemActive.className = "carousel__item carousel__item__active";
+        // Add animation class to new active slide h4s
+        newItemActive.querySelectorAll('h4').forEach(h4 => {
+            h4.classList.add('carousel__h4-animate');
+        });
+        onSlide = false;
+    }
+
+    newItemActive.addEventListener("transitionend", cleanUp, { once: true });
+    setTimeout(cleanUp, 600);
+}
+
+function getItemActiveIndex() {
+    const itemsArray = Array.from(document.querySelectorAll('.carousel__item'));
+    const itemActive = document.querySelector(".carousel__item__active");
+    const itemActiveIndex = itemsArray.indexOf(itemActive);
+    return itemActiveIndex;
+}
 
 
 /*~~~~~~~~~~~~~~~ Effect MOUSEMOVE EFFECT ~~~~~~~~~~~~~~~*/
