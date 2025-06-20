@@ -153,11 +153,37 @@ document.querySelector("#company").addEventListener("mousemove", (e) => {
     handleMouseMove(e, image);
 });
 
+document.querySelector("#contact").addEventListener("mousemove", (e) => {
+    const image = document.querySelector(".background-image-contact");
+    handleMouseMove(e, image);
+});
+
 
 /*~~~~~~~~~~~~~~~ TABS ~~~~~~~~~~~~~~~*/
 
 
 /*~~~~~~~~~~~~~~~ SWIPER ~~~~~~~~~~~~~~~*/
+
+const swiper = new Swiper('.swiper', {
+  
+  loop: true,
+
+  speed: 1000,
+  spaceBetween: 30,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  grabCursor: true,
+
+  
+});
 
 
 /*~~~~~~~~~~~~~~~ SHOW SCROLL UP ~~~~~~~~~~~~~~~*/

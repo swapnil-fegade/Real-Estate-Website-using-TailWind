@@ -172,3 +172,14 @@ p {
         transform: translateY(0);
     }
 }
+
+
+/* review */
+
+.swiper-pagination {
+    @apply text-center lg:text-right;
+}
+
+.swiper-pagination-bullet {
+    @apply bg-firstcolor w-3 h-3 lg:h-4 lg:w-4;
+}
