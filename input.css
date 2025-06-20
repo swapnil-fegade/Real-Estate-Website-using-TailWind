@@ -143,7 +143,7 @@ p {
 .carousel__fade .carousel__item__next,
 .carousel__fade .carousel__item__prev{
     transform:  none;
-    @apply opacity-100 duration-500 ease-in-out;;
+    @apply opacity-100 duration-500 ease-in-out;
 }
 
 .carousel__fade .carousel__item__active.carousel__item__next,

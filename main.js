@@ -148,6 +148,11 @@ document.querySelector("#about").addEventListener("mousemove", (e) => {
     handleMouseMove(e, image);
 });
 
+document.querySelector("#company").addEventListener("mousemove", (e) => {
+    const image = document.querySelector(".background-image-company");
+    handleMouseMove(e, image);
+});
+
 
 /*~~~~~~~~~~~~~~~ TABS ~~~~~~~~~~~~~~~*/
 
