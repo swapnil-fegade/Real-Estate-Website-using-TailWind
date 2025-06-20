@@ -233,3 +233,19 @@ window.addEventListener("scroll", activeLink);
 
 /*~~~~~~~~~~~~~~~ SCROLL REVEAL ANIMATION ~~~~~~~~~~~~~~~*/
 
+const sr = ScrollReveal({
+    origin: "left",
+    distance: "60px",
+    duration: 1500,
+    delay: 300,
+    reset: true
+})
+
+sr.reveal(`.about__item, .company__content h2, .company__content h4`, { interval : 100 })
+
+sr.reveal(`.about__form h2, .about__form h4, .company__item, .contact__form h2, .contact__form h4`, { origin: "right", interval : 100 })
+
+sr.reveal(`.about__form form, .company__content img, .contact__form form`, { origin: "top", scale: 0.5, delay: 500 })
+
+sr.reveal(`.review__brand`, { origin: "top", interval : 100 })
+
