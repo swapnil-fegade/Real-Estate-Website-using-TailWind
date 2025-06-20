@@ -9,6 +9,7 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-black: #000;
+    --color-white: #fff;
     --spacing: 0.25rem;
     --container-xs: 20rem;
     --container-lg: 32rem;
@@ -295,6 +296,9 @@
   .mt-5 {
     margin-top: calc(var(--spacing) * 5);
   }
+  .mt-10 {
+    margin-top: calc(var(--spacing) * 10);
+  }
   .mr-10 {
     margin-right: calc(var(--spacing) * 10);
   }
@@ -369,6 +373,9 @@
   }
   .w-32 {
     width: calc(var(--spacing) * 32);
+  }
+  .w-36 {
+    width: calc(var(--spacing) * 36);
   }
   .w-40 {
     width: calc(var(--spacing) * 40);
@@ -479,6 +486,13 @@
   .gap-x-2 {
     column-gap: calc(var(--spacing) * 2);
   }
+  .space-x-5 {
+    :where(& > :not(:last-child)) {
+      --tw-space-x-reverse: 0;
+      margin-inline-start: calc(calc(var(--spacing) * 5) * var(--tw-space-x-reverse));
+      margin-inline-end: calc(calc(var(--spacing) * 5) * calc(1 - var(--tw-space-x-reverse)));
+    }
+  }
   .overflow-hidden {
     overflow: hidden;
   }
@@ -585,6 +599,9 @@
   .\!text-firstcolor {
     color: var(--color-firstcolor) !important;
   }
+  .\!text-white {
+    color: var(--color-white) !important;
+  }
   .\!text-whitecolor {
     color: var(--color-whitecolor) !important;
   }
@@ -596,6 +613,9 @@
   }
   .text-graycolor {
     color: var(--color-graycolor);
+  }
+  .text-white {
+    color: var(--color-white);
   }
   .text-whitecolor {
     color: var(--color-whitecolor);
@@ -684,6 +704,13 @@
       content: var(--tw-content);
       --tw-content: '';
       content: var(--tw-content);
+    }
+  }
+  .hover\:text-firstcolor {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-firstcolor);
+      }
     }
   }
   .hover\:text-graycolor {
@@ -1188,6 +1215,11 @@ p {
   inherits: false;
   initial-value: 0;
 }
+@property --tw-space-x-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
 @property --tw-border-style {
   syntax: "*";
   inherits: false;
@@ -1296,6 +1328,7 @@ p {
       --tw-skew-x: initial;
       --tw-skew-y: initial;
       --tw-space-y-reverse: 0;
+      --tw-space-x-reverse: 0;
       --tw-border-style: solid;
       --tw-font-weight: initial;
       --tw-shadow: 0 0 #0000;
