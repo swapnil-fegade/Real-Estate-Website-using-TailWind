@@ -187,9 +187,48 @@ const swiper = new Swiper('.swiper', {
 
 
 /*~~~~~~~~~~~~~~~ SHOW SCROLL UP ~~~~~~~~~~~~~~~*/
+const scrollUp = () => {
+    const scrollUpBtn = document.getElementById('scroll-up');
+
+    if(this.scrollY >=250) {
+        scrollUpBtn.classList.remove("-bottom-1/2")
+        scrollUpBtn.classList.add("bottom-4")
+    } else {
+        scrollUpBtn.classList.add("-bottom-1/2")
+        scrollUpBtn.classList.remove("bottom-4")
+    }
+}
+window.addEventListener("scroll", scrollUp);
 
 
 /*~~~~~~~~~~~~~~~ SCROLL SECTIONS ACTIVE LINK ~~~~~~~~~~~~~~~*/
+
+const activeLink = () => {
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    let current = "home"
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        
+        if(this.scrollY >= sectionTop - 60) {
+            current = section.getAttribute("id");
+
+        }
+    })
+
+    navLinks.forEach(item => {
+        item.classList.remove("active");
+
+        if(item.href.includes(current)) {
+            item.classList.add("active");
+        }
+    })
+
+}
+
+window.addEventListener("scroll", activeLink);
 
 
 /*~~~~~~~~~~~~~~~ SCROLL REVEAL ANIMATION ~~~~~~~~~~~~~~~*/
