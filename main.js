@@ -158,10 +158,6 @@ document.querySelector("#contact").addEventListener("mousemove", (e) => {
     handleMouseMove(e, image);
 });
 
-
-/*~~~~~~~~~~~~~~~ TABS ~~~~~~~~~~~~~~~*/
-
-
 /*~~~~~~~~~~~~~~~ SWIPER ~~~~~~~~~~~~~~~*/
 
 const swiper = new Swiper('.swiper', {
